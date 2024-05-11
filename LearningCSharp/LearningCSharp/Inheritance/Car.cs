@@ -27,12 +27,12 @@ namespace LearningCSharp
             Console.WriteLine("I'm in heaven now.");
         }
 
+        // override functionality is a keyword in C#, unlike how its an annotation in Java.
         public override void move()
         {
             Console.WriteLine("I am a car and I am moving");
         }
 
-        // override functionality is a keyword in C#, unlike how its an annotation in Java.
         public override void stop()
         {
             throw new NotImplementedException();

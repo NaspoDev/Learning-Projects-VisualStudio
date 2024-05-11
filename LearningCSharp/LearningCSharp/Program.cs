@@ -1,6 +1,5 @@
-﻿// a namespace is a container for related classes. You can think of it like a package in Java.
-// In Java, packages are defined by the physical file structure and with the "package com.example..." statement
-// at the top of the file. In C#, namespaces are defined programmatically.
+﻿// You can also define a file scoped namespace like this:
+// namespace LearningCSharp;
 namespace LearningCSharp
 {
     internal class Program
@@ -15,10 +14,11 @@ namespace LearningCSharp
             string lastName = "Topaltsis";
             Console.WriteLine("Hello {0} {1}", firstName, lastName);
             Console.WriteLine($"Hello {firstName} {lastName}. Let's learn C#!");
+            Console.WriteLine(@"C:\example\path"); // @ makes the string a string literal (raw string)
 
             // Primitive types are the exact same as Java
             // Defining constants
-            const string MyConst = "I am a constant"; // Notice how consts are 
+            const string MyConst = "I am a constant"; // Notice how consts are
 
             // Implicit Type Conversion
             // If possible, values will be implicitly converted without the need to use some kind of utility method.
@@ -45,7 +45,7 @@ namespace LearningCSharp
                 Console.Write(fruit + " ");
             }
 
-            // Testing our classes and inheritance...]
+            // Testing our classes and inheritance...
             Car sonata = new Car(220, "Hyundai", "Sonata");
             Console.WriteLine("My car's info:");
             Console.WriteLine($"Manufacturer: {sonata.Manufacturer}, Model: {sonata.Model}, top speed: {sonata.TopSpeed}");
@@ -61,10 +61,25 @@ namespace LearningCSharp
             //    a += 1;
             //}
 
-
             // Multi-dimensional arrays. Each additional dimension is represented with a comma
-            int[,] twoDArray = { { 1, 2, 3}, { 1, 2, 3} };
+            int[,] twoDArray = { { 1, 2, 3 }, { 1, 2, 3 } };
             int[,,] threeDArray = { { { 1, 2, 3 } }, { { 1, 2, 3 } } };
+
+            // Testing our structs. (see Structs.sc)
+            Structs structs = new Structs();
+            structs.doSomething();
+
+            /*
+            var keyword (spoiler: dont use this)
+            The var keyword is used to generally declare a variable without declaring its type.
+            Typically used to save typing, for situations like: "I think there is enough context information for the reader
+            to understand what the type would be if I didn't use var.". 
+
+            Example: Dictionary<string, int> dict = new Dictionary<string, int>(); would turn into the code below.
+            
+            *General consensus: dont use this.
+            */
+            var myDict = new Dictionary<string, int>();
         }
 
         // async await. C# supports the async await syntax!
